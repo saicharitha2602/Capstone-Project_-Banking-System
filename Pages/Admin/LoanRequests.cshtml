@@ -1,0 +1,99 @@
+﻿@page
+@model BankingProject.Pages.Admin.LoanRequestsModel
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    .styled-table {
+    border-collapse: collapse;
+    margin-left:auto;
+    margin-right:auto;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align:justify;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+body {
+ background-color:blanchedalmond;
+  
+}
+
+</style>
+
+</head>
+<body>
+    <br />
+    <br />
+<table class="styled-table" >
+   
+    <thead>
+        <tr>
+            <th>Loan ID</th>
+            <th>Fullname</th>
+            <th>Email ID</th>
+            <th>PhNo</th>
+            <th>Age</th>
+            <th>Annual Income</th>
+            <th>Loan Type</th>
+            <th>Years</th>
+            <th>Amount</th>
+            <th>Staus</th>
+            <th>Description</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model.obj){
+        <tr>
+            
+            <td>@x.loan_id</td>
+            <td>@x.fullname</td>
+            <td>@x.email_id</td>
+            <td>@x.phno</td>
+            <td>@x.age</td>
+            <td>@x.annual_income</td>
+            <td>@x.loan_type</td>
+            <td>@x.years</td>
+            <td>@x.loan_amount</td>
+            <td>@x.status</td>
+            
+            <form method="post" asp-route-loan_id=@x.loan_id asp-page-handler="UpdateLoans">
+            <td><input type="text" name="description" requied /></td>
+            <td><input type="submit" name="update" value="update" /></td>
+            </form>
+        </tr>
+        
+        
+        }
+    </tbody>
+</table>
+</body>
+</html> 

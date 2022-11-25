@@ -1,0 +1,130 @@
+﻿@page
+@model BankingProject.Pages.Users.LoansModel
+@{
+}
+
+<head>
+
+     <style>
+         body {
+ background-color:#fcf8e3 !important;
+  
+}
+     </style>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+
+ <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/Users/Home">Home</a></li>
+      <li class="active"><a href="/Users/FundTransfer">Fund Transfer</a></li>
+      <li class="active"><a href="/Users/Deposits"> Apply for Deposits</a></li>
+      <li class="active"><a href="/Users/Loans">Apply for Loans</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Transactions<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="/Users/Sent_Transactions">Sent Transactions</a></li>
+          <li><a href="/Users/Received_Transactions">Received Transactions</a></li>
+          <li><a href="/Users/ViewBalance">View Balance</a></li>
+        </ul>
+      </li>
+     
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/Users/Profile"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+      <li><a href="/Users/Login"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+    </ul>
+  </div>
+</nav>
+@if (TempData["success_msg"] != null)
+{
+   <div>
+       <div class="row-cols-1">
+       <div class="alert alert-success alert-dismissible">
+                @TempData["success_msg"]
+               
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+       </div>
+       </div>
+   </div>
+}
+@if (TempData["error_msg"] != null)
+{
+   <div>
+       <div class="row-cols-1">
+       <div class="alert alert-success alert-dismissible">
+                @TempData["error_msg"]
+                
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+       </div>
+       </div>
+   </div>
+}
+    <body>
+<form method="post">
+
+<div class="row-cols-4" align="center">
+       
+    <label class="col-form-label">Fullname  </label>
+        <div>
+        <input type="text" class=" form-control" name="fullname" style="width: 200px;" pattern="[a-zA-Z][a-zA-Z ]+[a-zA-Z]$" maxlength="30" required></input>
+        </div><br />
+        <label class="col-form-label">Email ID  </label>
+        <div>
+            <input type="email" class=" form-control" name="email_id" style="width: 200px;" required maxlength="30"></input>
+        </div><br />
+        <label class="col-form-label">Phone Number  </label>
+        <div>
+            <input type="number" class=" form-control" name="phno" style="width: 200px;" required pattern="[789][0-9]{9}"></input>
+        </div><br />
+        <label class="col-form-label" for="age">Age</label>
+        <div>
+    <select class="col-form-label" name="age" style="width: 200px;">
+  <option value="<25"><25</option>
+  <option value=">25">>25</option>
+ </div>
+</select><br />
+        <label class="col-form-label">Annual Income </label>
+        <div>
+            <input type="number" class=" form-control" name="annual_income" style="width: 200px;" required maxlength="10"></input>
+        </div><br />
+    <label class="col-form-label" for="deposit_type">Loan Type:</label>
+        <div>
+    <select class="col-form-label" name="loan_type" style="width: 200px;">
+  <option value="Housing">Housing</option>
+  <option value="Gold">Gold</option>
+  <option value="Education">Education</option>
+  <option value="Personal">Personal</option>
+ </div>
+</select>
+<br>
+<label class="col-form-label" for="years">No of years:</label>
+        <div>
+    <select class="col-form-label" name="years" style="width: 200px;">
+  <option value="5">5</option>
+  <option value="10">10</option>
+  
+ 
+</select>
+</div><br />
+        <label class="col-form-label"> Loan Amount:</label>
+        <div>
+            <input type="number" class=" form-control" name="amount" style="width: 200px;" required maxlength="10"></input>
+        </div>
+        <br>
+        <br>
+       <div>
+            <button type="submit" class="btn btn-success">Submit</button>
+            <button type="reset" class="btn btn-primary">Reset</button>
+            
+        </div>
+</div>
+</form>
+</body>

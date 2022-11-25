@@ -1,0 +1,68 @@
+﻿@page
+@model BankingProject.Pages.Users.ProfileModel
+@{
+}
+<head>
+    <style>
+     body {
+ background-color:#fcf8e3 !important;
+  
+}
+</style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .flex-parent {
+  display: flex;
+}
+
+.jc-center {
+  justify-content: center;
+}
+    </style>
+</head>
+
+
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/Users/Home">Home</a></li>
+      <li class="active"><a href="/Users/FundTransfer">Fund Transfer</a></li>
+      <li class="active"><a href="/Users/Deposits"> Apply for Deposits</a></li>
+      <li class="active"><a href="/Users/Loans">Apply for Loans</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Transactions<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="/Users/Sent_Transactions">Sent Transactions</a></li>
+          <li><a href="/Users/Received_Transactions">Received Transactions</a></li>
+          <li><a href="/Users/ViewBalance">View Balance</a></li>
+        </ul>
+      </li>
+     
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/Users/Profile"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+      <li><a href="/Users/Login"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+    </ul>
+  </div>
+</nav>
+    <body>
+    <br /><br />
+    <div class="flex-parent jc-center">
+        <a class="btn btn-primary btn-sm" asp-page="/Users/MyDeposits" ><i class="fas fa-user"></i>My Deposits</a>
+
+</div>
+<br />
+
+<br />
+<br />
+<br />
+<div class="flex-parent jc-center">
+ <a class="btn btn-primary btn-sm" asp-page="/Users/MyLoans" ><i class="fas fa-user"></i>My Loans</a>
+</div>
+
+</body>

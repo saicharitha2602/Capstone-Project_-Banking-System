@@ -1,0 +1,117 @@
+﻿@page
+@model BankingProject.Pages.Users.ViewBalanceModel
+@{
+}
+<head>
+   
+    
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+      body {
+ background-color:#fcf8e3 !important;
+  
+}
+    .styled-table {
+    border-collapse: collapse;
+    margin-left:auto;
+    margin-right:auto;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align:justify;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+
+</style>
+
+</head>
+
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li class="active"><a href="#">Fund Transfer</a></li>
+      <li class="active"><a href="#">Deposits</a></li>
+      <li class="active"><a href="#">Loans</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Transactions<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="/Users/Sent_Transactions">Sent Transactions</a></li>
+          <li><a href="/Users/Received_Transactions">Received Transactions</a></li>
+          <li><a href="/Users/ViewBalance">View Balance</a></li>
+        </ul>
+      </li>
+     
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/Users/Profile"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+      <li><a href="/Users/Login"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+    </ul>
+  </div>
+</nav>
+  
+      <body>
+<form  method ="post" class="example"  style="margin:auto;max-width:300px">
+  <input type="text" placeholder="Enter account number" name="acc_no" required>
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+<br /><br />
+
+     <table class="styled-table">
+    <thead>
+        
+        <tr>
+           
+          <th>Account No</th>
+          <th>Account Type</th>
+          <th>Current Balance</th>
+          
+          
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model.list){
+        
+        
+        <tr>
+            <td>@x.acc_no</td>
+            <td>@x.acc_type</td>
+            <td>@x.balance</td>
+            
+           
+        </tr>
+        }
+    </tbody>
+</table>
+</body>

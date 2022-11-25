@@ -1,0 +1,142 @@
+﻿@page
+{
+   
+}
+@model BankingProject.Pages.Users.HomeModel
+@{
+   
+            
+}
+@if (TempData["success_message"] != null)
+{
+   <div>
+       <div class="row-cols-1">
+       <div class="alert alert-success alert-dismissible">
+                @TempData["success_message"]
+                @TempData["Message"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert">X</button>
+       </div>
+       </div>
+   </div>
+}
+<head>
+     <style>
+         * {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+
+
+         body {
+ background-color:#fcf8e3 !important;
+  
+}
+     </style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--<title>@ViewData["Title"] - BankingProject</title>-->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+</head>
+
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/Users/Home">Home</a></li>
+      <li class="active"><a href="/Users/FundTransfer">Fund Transfer</a></li>
+      <li class="active"><a href="/Users/Deposits"> Apply for Deposits</a></li>
+      <li class="active"><a href="/Users/Loans">Apply for Loans</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Transactions<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="/Users/Sent_Transactions">Sent Transactions</a></li>
+          <li><a href="/Users/Received_Transactions">Received Transactions</a></li>
+          <li><a href="/Users/ViewBalance">View Balance</a></li>
+        </ul>
+      </li>
+     
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/Users/Profile"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+      <li><a href="/Users/Login"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+    </ul>
+  </div>
+</nav>
+  
+   <body>
+    <h2>This is home page of customer dashbaord</h2>
+    <br />
+    <br />
+    <div class="row">
+  <div class="column" >
+    <div class="card">Loans Info</div>
+     <div class="card">Gold Loan-5%</div>
+      <div class="card">Housing Loan-7%</div>
+      <div class="card">Education Loan-3%</div>
+      <div class="card">Personal Loan-3%</div>
+  </div>
+  <div class="column">
+    <div class="card">Deposits Info</div>
+    <div class="card">Recurring Deposit(Depends on period)</div>
+    <div class="card">Fixed Deposit - 7%</div>
+    <div class="card">It also depends on</div>
+    <div class="card">type of account you link with</div>
+  </div>
+  <div class="column">
+    <div class="card">Our Services</div>
+    <div class="card">Regsiter& Link your account</div>
+    <div class="card">Make Easy Transactions</div>
+    <div class="card">Apply For Deposits</div>
+    <div class="card">Apply For Loans</div>
+    <div class="card">Track of Transactions</div>
+  </div>
+  <div class="column">
+    <div class="card">Contact Us</div>
+    <div class="card">Mail : admin@gmail.com</div>
+    <div class="card">Helpline No: +91 8924917412</div>
+    <div class="card">You Can Contact Us At our branch</div>
+  </div>
+</div>
+    
+   
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+  
